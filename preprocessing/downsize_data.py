@@ -4,8 +4,8 @@ import pandas
 ## ROWS ARE REMOVED AT RANDOM.
 ## IF YOU WISH TO SEE THE ORIGINAL DATASET, SEE LYKE ET AL. (2020).
 
-input_file = "localdata/Clean_Quasar_Data.csv"
-output_file = "data/Clean_Quasar_Data.csv"
+input_file = "../localdata/Clean_Quasar_Data.csv"
+output_file = "../data/Clean_Quasar_Data.csv"
 
 df = pandas.read_csv(input_file)
 
