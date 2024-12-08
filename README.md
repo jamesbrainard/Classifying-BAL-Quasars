@@ -10,6 +10,7 @@ This was a collaborative, multidisciplinary project between the fields of machin
 -- [Converting .FITS to .csv](#converting-fits-to-csv)
 -- [Feature Selection](#feature-selection)
 -- [Converting Flux to Luminosity](#converting-flux-to-luminosity)
+-- [Downsizing](#downsizing)
 -- [KNN Imputation](#knn-imputation)
 - [Modeling](#modeling)
 - [Evaluation of Best Model](#evaluation-of-best-model)
@@ -21,9 +22,10 @@ This was a collaborative, multidisciplinary project between the fields of machin
 ![Block Process Diagram](img/block_diagram.png)
 
 # Dataset
-- **File:** 'data/Lyke2020.csv'
+- **File:** 'data/Clean_Quasar_Data.csv'
 - **Source:** Lyke, B. W., Higley, A. N., McLane, J. N., Schurhammer, D. P., Myers, A. D., Ross, A. J., ... & Weaver, B. A. (2020). The Sloan Digital Sky Survey Quasar Catalog: Sixteenth Data Release. The Astrophysical Journal Supplement Series, 250(1), 8.
-- The dataset contains hundreds of columns related to quasar identification, flux, magnitude, and other features.
+- The original dataset contains hundreds of columns related to quasar identification, flux, magnitude, and other features.
+- This dataset has been cleaned as discussed below.
 - The target variable (BAL_PROB) indicates the BAL probability of each quasar.
 
 # Preprocessing
@@ -135,6 +137,13 @@ Luminosity is a more reliable measure of energy output than flux. This is becaus
     for col in flux_cols:
         data[f'{col}_LUMINOSITY'] = 4 * numpy.pi * (data['Distance_Mpc']**2) * data[col]
 
+### Downsizing
+GitHub has a file size limit of 100MB. This means that the dataset (even the clean one) cannot be uploaded. *data/Clean_Quasar_Data.csv* is a randomized 1/4 copy of the original Clean_Quasar_Data. If you attempt to run the preprocessing files, they will not work unless you create a localdata/ file with data from the Lyke et al. (2020) paper on your own.
+
+However, that step is not necessary to see the models in action. The dataset is still very large, even after a major downsize. Contact James Brainard (repository owner) for any inquiries about the full data.
+
+The notebook file outputs as displayed in this repository were obtained using the full dataset.
+
 ### KNN-Imputation
 There is a good deal of missing data in our columns. Rather than using simple mean imputation, we make use of the surplus of data at our disposal with KNN imputation. KNN imputation fills in missing data by using all other columns to find and use the most similar other rows (neighbors) in the dataset. This does, however, require far more excess computational power than any other method used.
 
@@ -187,7 +196,7 @@ Using scikit-learn's ROC curve functions, we can visualize the model's ROC curve
 # Replication (Setup & Usage)
 NOTE: GitHub has a file size limit of 100MB. This means that the dataset (even the clean one) cannot be uploaded. *data/Clean_Quasar_Data.csv* is a randomized 1/4 copy of the original Clean_Quasar_Data. If you attempt to run the preprocessing files, they will not work unless you create a localdata/ file with data from the Lyke et al. (2020) paper on your own. 
 
-However, that step is not necessary to see the models in action. The dataset is still very large, even after a major downsize. Contact James Brainard for any inquiries about the full data.
+However, that step is not necessary to see the models in action. The dataset is still very large, even after a major downsize. Contact James Brainard (repository owner) for any inquiries about the full data.
 
 1. Clone this repository:
 
