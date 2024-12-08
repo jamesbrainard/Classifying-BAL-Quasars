@@ -30,9 +30,9 @@ This was a collaborative, multidisciplinary project between the fields of machin
 
 # Preprocessing
 - **Files:** 
--- *open_fits.py*
--- *preprocessing.ipynb*
--- *preprocessing_signal_to_noise.ipynb* - output used only in *random_forest_snr.ipynb*
+    - *open_fits.py*
+    - *preprocessing.ipynb*
+    - *preprocessing_signal_to_noise.ipynb* - output used only in *random_forest_snr.ipynb*
 
 Preprocessing complex cosmological data is no easy feat. However, the data has been previously processed by Lyke et. al. (2020), albiet for a different purpose.
 
@@ -155,15 +155,15 @@ There is a good deal of missing data in our columns. Rather than using simple me
 # Modeling
 Multiple models were used in an attempt to find the best possible solution to this classification problem. Among the models are:
 - Random Forest 
--- *random_forest.ipynb*
--- *random_forest_snr.ipynb*
--- *random_forest_psfflux.iypnb*
--- *random_forest_wise.ipynb*
--- *random_forest_with_knn_imputation.ipynb*
+    - *random_forest.ipynb*
+    - *random_forest_snr.ipynb*
+    - *random_forest_psfflux.iypnb*
+    - *random_forest_wise.ipynb*
+    - *random_forest_with_knn_imputation.ipynb*
 - Gradient Boosting
--- *gradient_boosting.ipynb*
+    - *gradient_boosting.ipynb*
 - Adaptive Boosting
--- *adaptive_boosting.ipynb*
+    - *adaptive_boosting.ipynb*
 
 The random forest with KNN imputation produced superior performance on every metric. Below is an evaluation of only this model. For evaluations of other models, see respective *.ipynb* files.
 
