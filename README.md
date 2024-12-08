@@ -185,6 +185,10 @@ Using scikit-learn's ROC curve functions, we can visualize the model's ROC curve
 ![ROC Curve](img/roc_curve.png)
 
 # Replication (Setup & Usage)
+NOTE: GitHub has a file size limit of 100MB. This means that the dataset (even the clean one) cannot be uploaded. *data/Clean_Quasar_Data.csv* is a randomized 1/4 copy of the original Clean_Quasar_Data. If you attempt to run the preprocessing files, they will not work unless you create a localdata/ file with data from the Lyke et al. (2020) paper on your own. 
+
+However, that step is not necessary to see the models in action. The dataset is still very large, even after a major downsize. Contact James Brainard for any inquiries about the full data.
+
 1. Clone this repository:
 
         git clone https://github.com/jamesbrainard/quasars.git
