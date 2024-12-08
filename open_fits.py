@@ -1,7 +1,7 @@
 import pandas
 from astropy.io import fits
 
-filename = 'DR16Q_v4.fits'
+filename = 'localdata/DR16Q_v4.fits'
 with fits.open(filename) as hdul:
     # Accesses the first extension
     hdu = hdul[1] 
